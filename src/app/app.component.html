@@ -3,13 +3,13 @@
 </div>
 <div style="margin-top:10px;">
 	<select #colorSelect (change)="onColorChange($event.target.value)">
-		<option value="0">White</option>
-		<option value="384">Red</option>
-		<option value="320">Orange</option>
-		<option value="256">Yellow</option>
-		<option value="192">Green</option>
-		<option value="128">Blue</option>
-		<option value="64">Purple</option>
+		<option value="{{Color.white}}" class="white">White</option>
+		<option value="{{Color.red}}" class="red">Red</option>
+		<option value="{{Color.orange}}" class="orange">Orange</option>
+		<option value="{{Color.yellow}}" class="yellow">Yellow</option>
+		<option value="{{Color.green}}" class="green">Green</option>
+		<option value="{{Color.blue}}" class="blue">Blue</option>
+		<option value="{{Color.purple}}" class="purple">Purple</option>
 	</select>
 </div>
 <div style="margin-top:10px">

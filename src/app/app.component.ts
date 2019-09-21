@@ -10,9 +10,12 @@ import { Utils, Color } from '../app/Utils';
 export class AppComponent implements OnInit {
   @ViewChild('dice') dice: DiceAnimatorComponent;
   color: number;
+  Color = Color;
+  selectedColor: Color;
 
   ngOnInit() {
     this.color = Color.white;
+    this.selectedColor = Color.white;
   }
 
   Roll() {
@@ -20,6 +23,8 @@ export class AppComponent implements OnInit {
   }
 
   onColorChange(value) {
+    this.selectedColor = value;
     this.dice.ChangeColor(value);
+    
   }
 }
