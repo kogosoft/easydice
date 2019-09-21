@@ -12,10 +12,14 @@ export class AppComponent implements OnInit {
   color: number;
 
   ngOnInit() {
-    this.color = Color.green;
+    this.color = Color.white;
   }
 
   Roll() {
     this.dice.Animate(12, Utils.GetRandomNumber(6));
+  }
+
+  onColorChange(value) {
+    this.dice.ChangeColor(value);
   }
 }

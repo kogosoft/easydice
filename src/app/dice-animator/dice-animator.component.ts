@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Utils } from '../Utils';
+import { Utils, Color } from '../Utils';
 
 @Component({
   selector: 'app-dice-animator',
@@ -23,21 +23,23 @@ export class DiceAnimatorComponent implements OnInit {
     let i = 0;
     const interval = setInterval(() => {
       this.backgroundPosX = (this.diff * showNums[i]).toString() + 'px';
-      console.log(this.backgroundPosX);
       i++;
       if (i === showNums.length && interval) {
         this.backgroundPosX = (384 - this.diff * (end - 1)).toString() + 'px';
-        console.log(end.toString() + ' ' + this.backgroundPosY);
         clearInterval(interval);
       }
     }, this.interval);
   }
 
   private GetRandomNumbers(occurances: number): Array<number> {
-    var retVal: Array<number> = [];
+    const retVal: Array<number> = [];
     for (let i = 0; i < occurances; i++) {
       retVal.push(Utils.GetRandomNumber(6));
     }
     return retVal;
+  }
+
+  public ChangeColor(color: Color) {
+    this.backgroundPosY = color + 'px';
   }
 }
